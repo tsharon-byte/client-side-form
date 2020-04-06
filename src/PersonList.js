@@ -1,0 +1,76 @@
+import React from 'react';
+import './PersonForm.css';
+
+class PersonList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            listOfPersons: []
+        };
+        this.rest = this.rest.bind(this);
+    }
+
+    async rest() {
+        let promise = await fetch("http://localhost:8080/employeeList", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            }
+        });
+        if (promise.ok) { // если HTTP-статус в диапазоне 200-299
+            // получаем тело ответа (см. про этот метод ниже)
+            let json = await promise.json();
+            this.setState({
+                listOfPersons: json
+            });
+        } else {
+            alert("Ошибка HTTP: " + promise.status);
+        }
+    }
+
+    componentWillMount() {
+        console.log('Component will mount!');
+        this.rest();
+    }
+
+    render() {
+        return (
+            <div>
+                <p>Any text</p>
+                <div id="survey-form">
+                    <h2>List of all persons</h2>
+                    <table border="2" cellSpacing="5" style={{backgroundColor: 'rgba(150,150,150,0.4)'}}>
+                        <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last name</th>
+                            <th>E-mail</th>
+                            <th>Age</th>
+                            <th>Current role</th>
+                            <th>Recommend</th>
+                            <th>Language</th>
+                            <th>Comments</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.state.listOfPersons.map((person) =>
+                            (<tr>
+                                <td>{person.firstName}</td>
+                                <td>{person.lastName}</td>
+                                <td>{person.email}</td>
+                                <td>{person.age}</td>
+                                <td>{person.currentRole}</td>
+                                <td>{person.recommend}</td>
+                                <td>{person.language}</td>
+                                <td>{person.comments}</td>
+                            </tr>)
+                        )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default PersonList;

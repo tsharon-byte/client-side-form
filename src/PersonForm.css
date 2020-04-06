@@ -1,0 +1,27 @@
+.form-group {
+    margin: 0 auto 0.15rem auto;
+    padding: 0.15rem;
+}
+
+#survey-form {
+    text-align: left;
+    margin: 0px auto 0px auto;
+    padding: 1.5rem 1.625rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 5%;
+    width: 50vw;
+    background-color: rgba(100, 100, 236, 0.5);
+}
+
+.form-control {
+    width: 100%;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: rgb(100, 216, 300);
+    cursor: pointer;
+}
+.active {
+    color: deeppink;
+}
