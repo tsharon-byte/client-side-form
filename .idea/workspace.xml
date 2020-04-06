@@ -1,17 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f214c45e-5f75-4d08-bdd3-cf377352363b" name="Default Changelist" comment="" />
+    <list default="true" id="f214c45e-5f75-4d08-bdd3-cf377352363b" name="Default Changelist" comment="first commit">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/untitled5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="untitled5" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YeXGBE3FUGAS0bexKkloh1nEZR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Tanya\work\WebstormProjects\untitled5\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Tanya\work\WebstormProjects\untitled5\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -25,6 +63,21 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -35,8 +88,97 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583303935386</updated>
-      <workItem from="1583303936752" duration="268000" />
+      <workItem from="1583303936752" duration="1747000" />
+      <workItem from="1583305772187" duration="1771000" />
+      <workItem from="1583395183092" duration="3007000" />
+      <workItem from="1583487322735" duration="3317000" />
+      <workItem from="1583497574124" duration="231000" />
+      <workItem from="1583569183391" duration="7206000" />
+      <workItem from="1583604740769" duration="398000" />
+      <workItem from="1583674034429" duration="4177000" />
+      <workItem from="1583820791033" duration="2717000" />
+      <workItem from="1583823853075" duration="4675000" />
+      <workItem from="1583993066034" duration="3451000" />
+      <workItem from="1584099888011" duration="1217000" />
+      <workItem from="1584272497943" duration="5079000" />
+      <workItem from="1584282055530" duration="3753000" />
+      <workItem from="1584431913377" duration="6623000" />
+      <workItem from="1584448431317" duration="5395000" />
+      <workItem from="1584515019796" duration="1888000" />
+      <workItem from="1584529612629" duration="7228000" />
+      <workItem from="1584597310634" duration="14563000" />
+      <workItem from="1584941320508" duration="598000" />
+      <workItem from="1585295313132" duration="2809000" />
+      <workItem from="1585381457740" duration="3181000" />
+      <workItem from="1586158689701" duration="4749000" />
+      <workItem from="1586165348734" duration="103000" />
+      <workItem from="1586165507005" duration="447000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1583305935184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583305935184</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit">
+      <created>1583306044289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583306044289</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1583306054554</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583306054554</updated>
+    </task>
+    <task id="LOCAL-00004" summary="first commit">
+      <created>1586165700887</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586165700888</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/PersonForm.js</url>
+          <line>68</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/PersonList.js</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
