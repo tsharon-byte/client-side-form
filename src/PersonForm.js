@@ -66,7 +66,7 @@ function Languages(props) {
 }
 
 async function rest(person) {
-    let promise = await fetch("http://localhost:8080/employee", {
+    let promise = await fetch("https://salty-river-90503.herokuapp.com/employee", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'

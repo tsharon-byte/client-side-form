@@ -11,7 +11,7 @@ class Person {
         this.lastName = lastName;
         this.email = email;
         this.age = age;
-        this.currentRole = currentRole;
+        this.currentUserRole = currentRole;
         this.recommend = recommend;
         this.language = language;
         this.comments = comments;
