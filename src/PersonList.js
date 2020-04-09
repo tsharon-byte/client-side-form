@@ -11,7 +11,7 @@ class PersonList extends React.Component {
     }
 
     async rest() {
-        let promise = await fetch("http://localhost:8080/employeeList", {
+        let promise = await fetch("https://salty-river-90503.herokuapp.com/employeeList", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -28,15 +28,14 @@ class PersonList extends React.Component {
         }
     }
 
-    componentWillMount() {
-        console.log('Component will mount!');
+    componentDidMount() {
+        console.log('Component did mount!');
         this.rest();
     }
 
     render() {
         return (
             <div>
-                <p>Any text</p>
                 <div id="survey-form">
                     <h2>List of all persons</h2>
                     <table border="2" cellSpacing="5" style={{backgroundColor: 'rgba(150,150,150,0.4)'}}>

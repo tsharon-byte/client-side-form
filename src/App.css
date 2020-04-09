@@ -1,0 +1,26 @@
+.App {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: slategray;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 50%;
+}
+.route{
+  min-height: 10vh;
+  color: darkorchid;
+  font-size: 36px;
+  padding-top: 20px;
+}
