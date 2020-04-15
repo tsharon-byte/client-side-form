@@ -1,7 +1,6 @@
 import React from 'react';
 import Person from './Person';
 import './PersonForm.css';
-import {useHistory} from "react-router-dom";
 
 const languageData = [
     {title: 'Java', active: true},
@@ -56,15 +55,6 @@ function InputComponent(props) {
     </div>);
 }
 
-function Languages(props) {
-    let result = "";
-    for (let l of props.language) {
-        result += <Checkbox selected={l.active} label={l.title}
-                            onChange={props.onChange}/>;
-    }
-    return result;
-}
-
 async function rest(person) {
     let promise = await fetch("https://salty-river-90503.herokuapp.com/employee", {
         method: 'POST',
@@ -75,7 +65,7 @@ async function rest(person) {
     }).catch((error) => {
         alert("Нет доступа к серверу");
     });
-    if (promise != undefined) {
+    if (promise !== undefined) {
         if (promise.ok) { // если HTTP-статус в диапазоне 200-299
             // получаем тело ответа (см. про этот метод ниже)
             alert("Сохранено в БД");
@@ -206,24 +196,21 @@ class PersonForm extends React.Component {
                         <label id="select-label"
                                htmlFor="dropdown">Which option best describes your current role?</label>
                         <select value={this.state.currentRole} onChange={this.handleRoleChange}>
-                            {roles.map(item => <option value={item}>{item}</option>)}
+                            {roles.map((item, ix) => <option key={ix} value={item}>{item}</option>)}
                         </select>
                     </div>
                     <div className="form-group">
                         <label>
                             Would you recommend our site to your friend?
                         </label>
-                        {recommendData.map(item => <Radio selected={item.title === this.state.recommendOption}
+                        {recommendData.map((item, ix) => <Radio key={ix} selected={item.title === this.state.recommendOption}
                                                           label={item.title} onChange={this.handleRecommendChange}/>)}
                     </div>
                     <div className="form-group">
                         <label>
                             What language do you like to learn?
                         </label>
-                        {/*<Languages languge={this.state.language} onChange={this.handleLanguageChange}/>*/}
-                        {/*<Checkbox selected={this.state.language.active} label={this.state.language.title}*/}
-                        {/*          onChange={this.handleLanguageChange}/>*/}
-                        {this.state.language.map(item => <Checkbox selected={item.active} label={item.title}
+                        {this.state.language.map((item, ix) => <Checkbox key={ix} selected={item.active} label={item.title}
                                                                    onChange={this.handleLanguageChange}/>)}
                     </div>
                     <div className="form-group">
