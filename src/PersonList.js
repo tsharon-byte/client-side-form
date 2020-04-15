@@ -19,7 +19,7 @@ class PersonList extends React.Component {
         }).catch((error) => {
             alert("Нет доступа к серверу");
         });
-        if (promise != undefined) {
+        if (promise !== undefined) {
             if (promise.ok) { // если HTTP-статус в диапазоне 200-299
                 // получаем тело ответа (см. про этот метод ниже)
                 let json = await promise.json();
@@ -40,8 +40,8 @@ class PersonList extends React.Component {
     render() {
         return (
             <div>
-                <div id="survey-form">
-                    <h2>List of all persons</h2>
+                <h2>List of all persons</h2>
+                <div style={{marginLeft: "20px"}}>
                     <table border="2" cellSpacing="5" style={{backgroundColor: 'rgba(150,150,150,0.4)'}}>
                         <thead>
                         <tr>
@@ -56,8 +56,8 @@ class PersonList extends React.Component {
                         </tr>
                         </thead>
                         <tbody>
-                        {this.state.listOfPersons.map((person) =>
-                            (<tr>
+                        {this.state.listOfPersons.map((person,id) =>
+                            (<tr key={id}>
                                 <td>{person.firstName}</td>
                                 <td>{person.lastName}</td>
                                 <td>{person.email}</td>
