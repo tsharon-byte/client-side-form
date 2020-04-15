@@ -16,15 +16,19 @@ class PersonList extends React.Component {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             }
+        }).catch((error) => {
+            alert("Нет доступа к серверу");
         });
-        if (promise.ok) { // если HTTP-статус в диапазоне 200-299
-            // получаем тело ответа (см. про этот метод ниже)
-            let json = await promise.json();
-            this.setState({
-                listOfPersons: json
-            });
-        } else {
-            alert("Ошибка HTTP: " + promise.status);
+        if (promise != undefined) {
+            if (promise.ok) { // если HTTP-статус в диапазоне 200-299
+                // получаем тело ответа (см. про этот метод ниже)
+                let json = await promise.json();
+                this.setState({
+                    listOfPersons: json
+                });
+            } else {
+                alert("Ошибка HTTP: " + promise.status);
+            }
         }
     }
 
