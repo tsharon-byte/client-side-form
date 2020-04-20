@@ -1,5 +1,6 @@
 import React from 'react';
 import './PersonForm.css';
+import Person from "./Person";
 
 function InputComponent(props) {
     return (<div className="form-group">
@@ -22,8 +23,8 @@ function InputComponent(props) {
     </div>);
 }
 
-async function rest(id) {
-    let promise = await fetch("https://salty-river-90503.herokuapp.com/employee/"+id, {
+async function rest(person) {
+    let promise = await fetch(`https://salty-river-90503.herokuapp.com/employee/?firstName=${person.firstName}&lastName=${person.lastName}`, {
         method: 'DELETE',
     }).catch((error) => {
         alert("Нет доступа к серверу");
@@ -33,7 +34,13 @@ async function rest(id) {
             // получаем тело ответа (см. про этот метод ниже)
             alert("Удалено из БД");
         } else {
-            alert("Ошибка HTTP: " + promise.status);
+            switch (promise.status) {
+                case 404:
+                    alert(`Нет такого пользователя в БД: ${person.firstName} ${person.lastName}`)
+                    break;
+                default:
+                    alert("Ошибка HTTP: " + promise.status);
+            }
         }
     }
 }
@@ -42,31 +49,51 @@ class DeletePersonForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: ""
+            id: "",
+            firstName: "",
+            lastName: ""
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({id: event.target.value});
+        switch (event.target.id) {
+            case "Person First Name":
+                this.setState({firstName: event.target.value});
+                break;
+            case "Person Last Name":
+                this.setState({lastName: event.target.value});
+                break;
+        }
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        rest(this.state.id);
+        let p = new Person();
+        p.firstName = this.state.firstName;
+        p.lastName = this.state.lastName;
+        rest(p);
     }
 
     render() {
         return (
             <div>
                 <h1 id="title">
-                    Delete person by Id
+                    Delete person
                 </h1>
                 <form onSubmit={this.handleSubmit} id="survey-form">
-                    <InputComponent value={this.state.id}
+                    {/*<InputComponent value={this.state.id}*/}
+                    {/*                onChange={this.handleChange}*/}
+                    {/*                id="Person Id"*/}
+                    {/*                type="text"/>*/}
+                    <InputComponent value={this.state.firstName}
                                     onChange={this.handleChange}
-                                    id="Person Id"
+                                    id="Person First Name"
+                                    type="text"/>
+                    <InputComponent value={this.state.lastName}
+                                    onChange={this.handleChange}
+                                    id="Person Last Name"
                                     type="text"/>
                     <div className="form-group">
                         <button id="submit"
