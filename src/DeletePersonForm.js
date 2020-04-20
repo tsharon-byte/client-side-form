@@ -24,8 +24,12 @@ function InputComponent(props) {
 }
 
 async function rest(person) {
-    let promise = await fetch(`https://salty-river-90503.herokuapp.com/employee/?firstName=${person.firstName}&lastName=${person.lastName}`, {
+    let url=`https://salty-river-90503.herokuapp.com/employee?firstName=${person.firstName}&lastName=${person.lastName}`;
+    let promise = await fetch(url, {
         method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        }
     }).catch((error) => {
         alert("Нет доступа к серверу");
     });
