@@ -1,12 +1,15 @@
 class Person {
-    constructor(firstName,
-                lastName,
-                email,
-                age,
-                currentRole,
-                recommend,
-                language,
-                comments) {
+    constructor(
+        firstName,
+        lastName,
+        email,
+        age,
+        currentRole,
+        recommend,
+        language,
+        comments,
+        id=null) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -17,4 +20,5 @@ class Person {
         this.comments = comments;
     }
 }
+
 export default Person;

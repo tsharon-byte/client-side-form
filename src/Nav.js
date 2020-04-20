@@ -16,6 +16,9 @@ function Nav() {
                 <Link to='/list' style={style}>
                     <li>List of persons</li>
                 </Link>
+                <Link to='/delete' style={style}>
+                    <li>Delete the person</li>
+                </Link>
             </ul>
         </nav>
     );

@@ -45,6 +45,7 @@ class PersonList extends React.Component {
                     <table border="2" cellSpacing="5" style={{backgroundColor: 'rgba(150,150,150,0.4)'}}>
                         <thead>
                         <tr>
+                            <th>Id</th>
                             <th>First Name</th>
                             <th>Last name</th>
                             <th>E-mail</th>
@@ -58,11 +59,12 @@ class PersonList extends React.Component {
                         <tbody>
                         {this.state.listOfPersons.map((person,id) =>
                             (<tr key={id}>
+                                <td>{person.id}</td>
                                 <td>{person.firstName}</td>
                                 <td>{person.lastName}</td>
                                 <td>{person.email}</td>
                                 <td>{person.age}</td>
-                                <td>{person.currentRole}</td>
+                                <td>{person.currentUserRole}</td>
                                 <td>{person.recommend}</td>
                                 <td>{person.language}</td>
                                 <td>{person.comments}</td>
