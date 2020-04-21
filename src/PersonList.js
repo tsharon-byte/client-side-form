@@ -12,7 +12,8 @@ class PersonList extends React.Component {
 
     async rest() {
         // let url=`http://localhost:8080/employeeList`;
-        let url=`https://salty-river-90503.herokuapp.com/employeeList`;
+        // let url=`https://salty-river-90503.herokuapp.com/employeeList`;
+        let url ="https://whispering-springs-27059.herokuapp.com/employeeList";
         let promise = await fetch(url, {
             method: 'GET',
             headers: {
