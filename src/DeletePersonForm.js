@@ -24,12 +24,14 @@ function InputComponent(props) {
 }
 
 async function rest(person) {
-    let url=`https://salty-river-90503.herokuapp.com/employee?firstName=${person.firstName}&lastName=${person.lastName}`;
+    // let url=`http://localhost:8080/employee`;
+    let url=`https://salty-river-90503.herokuapp.com/employee`;
     let promise = await fetch(url, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
-        }
+        },
+        body: JSON.stringify(person)
     }).catch((error) => {
         alert("Нет доступа к серверу");
     });

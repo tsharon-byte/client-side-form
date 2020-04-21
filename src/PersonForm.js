@@ -56,7 +56,9 @@ function InputComponent(props) {
 }
 
 async function rest(person) {
-    let promise = await fetch("https://salty-river-90503.herokuapp.com/employee", {
+    // let url=`http://localhost:8080/employee`;
+    let url="https://salty-river-90503.herokuapp.com/employee"
+    let promise = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
