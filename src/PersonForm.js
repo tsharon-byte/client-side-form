@@ -56,24 +56,24 @@ function InputComponent(props) {
 }
 
 async function rest(person) {
-    // let url=`http://localhost:8080/employee`;
+    // let url = `http://localhost:8080/employee`;
     let url ="https://server-side-form.herokuapp.com/employee";
-    let promise = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(person)
-    }).catch((error) => {
-        alert("Нет доступа к серверу");
-    });
-    if (promise !== undefined) {
+    try {
+        let promise = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(person)
+        });
         if (promise.ok) { // если HTTP-статус в диапазоне 200-299
             // получаем тело ответа (см. про этот метод ниже)
             alert("Сохранено в БД");
         } else {
             alert("Ошибка HTTP: " + promise.status);
         }
+    } catch (error) {
+        alert("Нет доступа к серверу");
     }
 }
 
@@ -205,15 +205,18 @@ class PersonForm extends React.Component {
                         <label>
                             Would you recommend our site to your friend?
                         </label>
-                        {recommendData.map((item, ix) => <Radio key={ix} selected={item.title === this.state.recommendOption}
-                                                          label={item.title} onChange={this.handleRecommendChange}/>)}
+                        {recommendData.map((item, ix) => <Radio key={ix}
+                                                                selected={item.title === this.state.recommendOption}
+                                                                label={item.title}
+                                                                onChange={this.handleRecommendChange}/>)}
                     </div>
                     <div className="form-group">
                         <label>
                             What language do you like to learn?
                         </label>
-                        {this.state.language.map((item, ix) => <Checkbox key={ix} selected={item.active} label={item.title}
-                                                                   onChange={this.handleLanguageChange}/>)}
+                        {this.state.language.map((item, ix) => <Checkbox key={ix} selected={item.active}
+                                                                         label={item.title}
+                                                                         onChange={this.handleLanguageChange}/>)}
                     </div>
                     <div className="form-group">
                         <label htmlFor="comments">

@@ -24,18 +24,16 @@ function InputComponent(props) {
 }
 
 async function rest(person) {
-    // let url=`http://localhost:8080/employee`;
-    let url ="https://server-side-form.herokuapp.com/employee";
-    let promise = await fetch(url, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(person)
-    }).catch((error) => {
-        alert("Нет доступа к серверу");
-    });
-    if (promise !== undefined) {
+    // let url = `http://localhost:8080/employee`;
+    let url = "https://server-side-form.herokuapp.com/employee";
+    try {
+        let promise = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(person)
+        });
         if (promise.ok) { // если HTTP-статус в диапазоне 200-299
             // получаем тело ответа (см. про этот метод ниже)
             alert("Удалено из БД");
@@ -48,6 +46,8 @@ async function rest(person) {
                     alert("Ошибка HTTP: " + promise.status);
             }
         }
+    } catch (error) {
+        alert("Нет доступа к серверу");
     }
 }
 

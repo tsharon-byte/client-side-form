@@ -11,17 +11,15 @@ class PersonList extends React.Component {
     }
 
     async rest() {
-        // let url=`http://localhost:8080/employeeList`;
-        let url ="https://server-side-form.herokuapp.com/employeeList";
-        let promise = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            }
-        }).catch((error) => {
-            alert("Нет доступа к серверу");
-        });
-        if (promise !== undefined) {
+        // let url = `http://localhost:8080/employeeList`;
+        let url = "https://server-side-form.herokuapp.com/employeeList";
+        try {
+            let promise = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                }
+            });
             if (promise.ok) { // если HTTP-статус в диапазоне 200-299
                 // получаем тело ответа (см. про этот метод ниже)
                 let json = await promise.json();
@@ -31,6 +29,8 @@ class PersonList extends React.Component {
             } else {
                 alert("Ошибка HTTP: " + promise.status);
             }
+        } catch (error) {
+            alert("Нет доступа к серверу");
         }
     }
 
@@ -58,7 +58,7 @@ class PersonList extends React.Component {
                         </tr>
                         </thead>
                         <tbody>
-                        {this.state.listOfPersons.map((person,id) =>
+                        {this.state.listOfPersons.map((person, id) =>
                             (<tr key={id}>
                                 <td>{person.firstName}</td>
                                 <td>{person.lastName}</td>
